@@ -1,0 +1,12 @@
+parameters:
+    artprima_jsend.view_response_listener.class: Artprima\Bundle\JsendBundle\EventListener\JsendResponseListener
+
+services:
+    artprima_jsend.view_response_listener:
+        class: %artprima_jsend.view_response_listener.class%
+        arguments: [@service_container]
+        calls:
+            - [ setSerializer, [@jms_serializer] ]
+        tags:
+            - { name: kernel.event_listener, event: kernel.view, method: onKernelView, priority: 101 }
+            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }

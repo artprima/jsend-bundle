@@ -1,0 +1,31 @@
+{
+    "name":        "artprima/jsend-bundle",
+    "type":        "symfony-bundle",
+    "description": "Symfony Jsend Bundle",
+    "keywords":    ["symfony", "bundle"],
+    "homepage":    "http://artprima.cz/",
+    "license":     "MIT",
+
+    "authors": [
+    ],
+
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/symfony": ">=2.3,<=2.5",
+        "doctrine/orm": "~2.2,>=2.2.3",
+        "doctrine/doctrine-bundle": "~1.2",
+        "twig/extensions": "~1.0",
+        "symfony/monolog-bundle": "~2.4",
+        "sensio/distribution-bundle": ">=2.3",
+        "sensio/framework-extra-bundle": ">=2.3",
+        "jms/serializer-bundle": "*"
+    },
+
+    "minimum-stability": "dev",
+
+    "autoload": {
+        "psr-4": {
+            "Artprima\\Bundle\\JsendBundle\\": ""
+        }
+    }
+}
