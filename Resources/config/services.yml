@@ -3,7 +3,7 @@ parameters:
 
 services:
     artprima_jsend.view_response_listener:
-        class: %artprima_jsend.view_response_listener.class%
+        class: "%artprima_jsend.view_response_listener.class%"
         arguments: [ "@service_container" ]
         calls:
             - [ setSerializer, [ "@jms_serializer" ] ]

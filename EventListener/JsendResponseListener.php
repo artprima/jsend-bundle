@@ -79,12 +79,17 @@ class JsendResponseListener extends TemplateListener
         }
 
         if ($configuration->getStatus() == Jsend::STATUS_FAIL) {
-            $viewConfig = $request->attributes->get('_view');
+            //fos rest bundle v2.0 and higher
+            $viewConfig = $request->attributes->get('_template');
+            if (!$viewConfig) {
+                //fos rest bundle v 1.7 - 1.8
+                $viewConfig = $request->attributes->get('_view');
+            }
             if (!$viewConfig) {
                 $viewConfig = new View(array());
-                $request->attributes->set('_view', $viewConfig);
+                $request->attributes->set('_' . $viewConfig->getAliasName(), $viewConfig);
             }
-            $viewConfig->setStatusCode(400);
+            $viewConfig->setStatusCode(Response::HTTP_BAD_REQUEST);
         }
 
         $result = array(
@@ -93,6 +98,7 @@ class JsendResponseListener extends TemplateListener
                 $configuration->getDataVar() => $view,
             )
         );
+
         $event->setControllerResult($result);
     }
 
