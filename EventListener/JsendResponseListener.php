@@ -99,7 +99,15 @@ class JsendResponseListener extends TemplateListener
             )
         );
 
-        $event->setControllerResult($result);
+        $view = \FOS\RestBundle\View\View::create();
+        if ($version = $request->attributes->get('version')) {
+            $context = new Context();
+            $context->setVersion($version);
+            $view->setContext($context);
+        }
+        $view->setData($result);
+
+        $event->setControllerResult($view);
     }
 
     public function onKernelException(GetResponseForExceptionEvent $event)
