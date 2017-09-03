@@ -13,10 +13,8 @@ namespace Artprima\Bundle\JsendBundle\EventListener;
 
 use Artprima\Bundle\JsendBundle\Controller\Annotations\Jsend;
 use Artprima\Bundle\JsendBundle\Serialization\ExceptionExclusionStrategy;
+use FOS\RestBundle\Context\Context;
 use FOS\RestBundle\Controller\Annotations\View;
-use JMS\Serializer\Handler\FormErrorHandler;
-use JMS\Serializer\Handler\SubscribingHandlerInterface;
-use JMS\Serializer\JsonSerializationVisitor;
 use JMS\Serializer\SerializationContext;
 use JMS\Serializer\SerializerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener;
