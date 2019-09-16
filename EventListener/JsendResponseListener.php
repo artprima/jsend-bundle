@@ -66,7 +66,7 @@ class JsendResponseListener extends TemplateListener
         /** @var Jsend $configuration */
         $configuration = $request->attributes->get('_jsend');
         if (!$configuration) {
-            return parent::onKernelView($event);
+            return;
         }
 
         $view = $event->getControllerResult();
