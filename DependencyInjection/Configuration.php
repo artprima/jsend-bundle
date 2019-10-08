@@ -29,11 +29,7 @@ class Configuration implements ConfigurationInterface
      */
     public function getConfigTreeBuilder()
     {
-        $treeBuilder = new TreeBuilder();
-        /**
-         * @var NodeBuilder $root
-         */
-        $root = $treeBuilder->root('artprima_jsend', 'array');
+        $treeBuilder = new TreeBuilder('artprima_jsend');
 
         return $treeBuilder;
     }
