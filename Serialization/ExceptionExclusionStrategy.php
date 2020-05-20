@@ -32,7 +32,7 @@ class ExceptionExclusionStrategy implements ExclusionStrategyInterface
      *
      * @return boolean
      */
-    public function shouldSkipClass(ClassMetadata $metadata, Context $context)
+    public function shouldSkipClass(ClassMetadata $metadata, Context $context): bool
     {
         return true;
     }
@@ -44,7 +44,7 @@ class ExceptionExclusionStrategy implements ExclusionStrategyInterface
      *
      * @return boolean
      */
-    public function shouldSkipProperty(PropertyMetadata $property, Context $context)
+    public function shouldSkipProperty(PropertyMetadata $property, Context $context): bool
     {
         return true;
     }
