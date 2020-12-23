@@ -21,9 +21,9 @@ use Sensio\Bundle\FrameworkExtraBundle\EventListener\TemplateListener;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\Form\Form;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Event\GetResponseForControllerResultEvent;
 use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
 use Symfony\Component\HttpKernel\Exception\HttpException;
+use Symfony\Component\HttpKernel\Event\KernelEvent;
 
 /**
  * Class JsendResponseListener
@@ -59,7 +59,7 @@ class JsendResponseListener extends TemplateListener
         $this->container = $container;
     }
 
-    public function onKernelView(GetResponseForControllerResultEvent $event)
+    public function onKernelView(KernelEvent $event)
     {
         $request = $event->getRequest();
 
