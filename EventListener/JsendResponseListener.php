@@ -123,7 +123,7 @@ class JsendResponseListener extends TemplateListener
             return;
         }
 
-        $error = $event->getException();
+        $error = $event->getThrowable();
 
         if (!$error instanceof HttpException) {
             return;
